@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="raigar.ramnarayan.googledrive">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!--<meta-data
+                android:name="com.google.android.geo.AIzaSyCQtOCke7GEMsudzuogxSNumUFdc2KePts"
+                android:value="AIzaSyCQtOCke7GEMsudzuogxSNumUFdc2KePts"/>
+
+            <meta-data
+                android:name="com.google.android.gms.1.0"
+                android:value="1.0"/>-->
+        </activity>
+
+        <service
+            android:name="raigar.ramnarayan.googledrive.events.MyDriveEventService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.drive.events.HANDLE_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".QueryFilesActivity" />
+        <activity android:name=".RetrieveContentsActivity" />
+        <activity android:name=".RetrieveContentsWithProgressDialogActivity" />
+        <activity android:name=".CreateFileActivity" />
+        <activity android:name=".CreateEmptyFileActivity" />
+        <activity android:name=".CreateFileInAppFolderActivity" />
+        <activity android:name=".CreateFolderActivity" />
+        <activity android:name=".DeleteFileActivity" />
+        <activity android:name=".AppendContentsActivity" />
+        <activity android:name=".RewriteContentsActivity" />
+        <activity android:name=".EditMetadataActivity" />
+        <activity android:name=".CreateFileWithCreatorActivity" />
+        <activity android:name=".RetrieveMetadataActivity" />
+        <activity android:name=".CreateFileInFolderActivity" />
+        <activity android:name=".CreateFolderInFolderActivity" />
+        <activity android:name=".QueryFilesInFolderActivity" />
+        <activity android:name=".PinFileActivity" />
+        <activity android:name="raigar.ramnarayan.googledrive.events.ListenChangeEventsForFilesActivity" />
+        <activity android:name="raigar.ramnarayan.googledrive.events.SubscribeChangeEventsForFilesActivity" />
+        <activity android:name=".QueryNonTextFilesActivity" />
+        <activity android:name=".QueryFilesSharedWithMeActivity" />
+        <activity android:name=".QueryFilesWithTitleActivity" />
+        <activity android:name=".QueryStarredTextFilesActivity" />
+        <activity android:name=".QueryTextOrHtmlFilesActivity" />
+        <activity android:name=".InsertUpdateCustomPropertyActivity" />
+        <activity android:name=".QueryFilesWithCustomPropertyActivity" />
+        <activity android:name=".DeleteCustomPropertyActivity" />
+        <activity android:name=".QuerySortedFilesActivity" />
+    </application>
+
+</manifest>
